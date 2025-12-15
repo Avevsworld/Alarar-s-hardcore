@@ -21,7 +21,7 @@ public class HeartManager {
     }
 
     public void applyMaxHealth(Player player, PlayerData data) {
-        var attribute = player.getAttribute(Attribute.GENERIC_MAX_HEALTH);
+        var attribute = player.getAttribute(Attribute.MAX_HEALTH);
         if (attribute == null) {
             return;
         }
@@ -45,11 +45,10 @@ public class HeartManager {
         return false;
     }
 
-    public void resetIfNeeded(PlayerData data) {
-        // TODO: add season reset logic based on a configurable season schedule.
+    public void ensureInitialized(PlayerData data) {
         if (data.getCurrentMaxHealth() <= 0) {
             data.setCurrentMaxHealth(baseMaxHealth);
-            data.setSeasonDead(false);
         }
     }
+
 }

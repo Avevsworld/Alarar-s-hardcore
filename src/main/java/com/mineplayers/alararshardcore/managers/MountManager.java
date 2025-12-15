@@ -21,7 +21,8 @@ public class MountManager {
 
     public MountManager(AlararsHardcore plugin) {
         this.plugin = plugin;
-        this.castTicks = TimeUnit.SECONDS.toTicks(plugin.getConfig().getLong("mount.castSeconds", 3));
+        long castSeconds = plugin.getConfig().getLong("mount.castSeconds", 3);
+        this.castTicks = Math.max(1L, castSeconds * 20L);
         this.cooldownMillis = TimeUnit.SECONDS.toMillis(plugin.getConfig().getLong("mount.cooldownSeconds", 900));
     }
 
