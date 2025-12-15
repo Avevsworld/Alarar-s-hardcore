@@ -1,0 +1,13 @@
+worldName: "aether"
+baseMaxHealth: 40.0
+healthLossPerDeath: 2.0
+mount:
+  castSeconds: 3
+  cooldownSeconds: 900
+spawn:
+  radiusMin: 2000
+  radiusMax: 20000
+  minDistanceToPlayers: 250
+  maxAttempts: 40
+breeding:
+  maxAnimalsPerChunk: 20
